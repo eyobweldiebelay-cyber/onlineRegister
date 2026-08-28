@@ -7,6 +7,9 @@ app.use(cors());
 //authRoute
 const authRoute=require('./route/authRoute');
  app.use("/api",authRoute);
+ //login route
+ const loginRoute=require('./route/authRoute')
+ app.use("/api",loginRoute)
  //application Route
  const applicationRoute=require('./route/applicationRoute')
  app.use("/api",applicationRoute);
