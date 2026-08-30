@@ -19,6 +19,15 @@ const authRoute=require('./route/authRoute');
  //document Route
  const documentRoute=require('./route/documentRoute')
  app.use("/api",documentRoute)
+ //paymeny
+ const paymentRoute = require("./route/paymentRoute");
+
+app.use("/api",paymentRoute
+);
+//comment
+const commentRoute =require("./route/commentRoute");
+
+app.use("/api",commentRoute);
  
 
 module.exports=app;
