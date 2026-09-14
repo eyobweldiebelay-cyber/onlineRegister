@@ -50,14 +50,14 @@ const userService=async(username,email,password,role)=>{
     // 6. Create JWT
     const token = jwt.sign(
         {
-            userid: user.userid,
+            user_id: user.user_id,
             username: user.username,
             email: user.email,
             role:user.role
         },
         process.env.SECURT_KEY,
         {
-            expiresIn: '1h'
+            expiresIn: '3h'
         }
     );
 
@@ -66,7 +66,8 @@ const userService=async(username,email,password,role)=>{
         message: "Login successful",
         token: token,
         user: {
-            userid: user.userid,
+            user_id: user.user_id,
+            student_id: user.student_id,
             username: user.username,
             email: user.email,
             role:user.role

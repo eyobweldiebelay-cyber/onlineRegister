@@ -2,23 +2,40 @@ const express = require("express");
 
 const router = express.Router();
 
-const authMiddleware =
-    require("../middleware/authMiddleware");
+const auth = require("../middleware/authMiddleware");
 
-const paymentController =require("../controller/paymentController");
+const controller = require("../controller/paymentController");
 
 
-router.post(
-    "/",
-    authMiddleware,
-    paymentController.createPayment
+// GET PAYMENT
+router.get(
+  "/",
+  auth,
+  controller.getPayment
 );
 
 
+// CREATE PAYMENT
+router.post(
+  "/",
+  auth,
+  controller.createPayment
+);
+
+
+// TEST PAYMENT
+router.post("/test",
+  auth,
+  controller.testPayment
+);
+// ===============================
+// DEAN - GET ALL PAYMENTS
+// ===============================
+
 router.get(
-    "/my",
-    authMiddleware,
-    paymentController.getMyPayment
+    "/dean",
+    auth,
+    controller.getDeanPayments
 );
 
 

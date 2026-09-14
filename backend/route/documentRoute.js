@@ -1,14 +1,19 @@
-const express=require('express')
-const router=express.Router()
-//uploamiddleware
-const upload = require("../middleware/uploadMiddleware");
-//application controller
-const documentController=require('../controller/documentController')
-//create route
-router.post("/upload",documentController.document)
-//getdocument
-router.get("/getupload",documentController.getMyDocuments);
-//module export
-//upload
+const express = require("express");
 
-module.exports=router
+const router = express.Router();
+
+const upload = require("../middleware/uploadMiddleware");
+const controller = require("../controller/documentController");
+const auth = require("../middleware/authMiddleware");
+
+router.post(
+  "/upload",
+  auth,
+  upload.fields([
+    { name: "certificate", maxCount: 1 },
+    { name: "national_id", maxCount: 1 }
+  ]),
+  controller.uploadDocuments
+);
+
+module.exports = router;
