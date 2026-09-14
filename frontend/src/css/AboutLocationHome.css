@@ -1,0 +1,151 @@
+/* Common page container */
+.page-container {
+  min-height: 100vh;
+  padding: 50px 7%;
+  background: #6a727f;
+}
+
+/* Common hero section */
+.page-hero {
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6492c0, #6c6969);
+  color: white;
+  box-shadow: 0 10px 30px rgba(5, 6, 6, 0.2);
+}
+
+.page-hero h1 {
+  margin: 0 0 15px;
+  font-size: 36px;
+}
+
+.page-hero p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Common white content section */
+.page-section {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
+}
+
+.page-section h2 {
+  margin-top: 0;
+  color: #1d4ed8;
+  font-size: 24px;
+}
+
+.page-section p {
+  color: #4b5563;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* Common cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.common-card {
+  padding: 25px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.common-card h3 {
+  margin-top: 0;
+  color: #3b4d69;
+}
+
+/* Common button */
+.common-button {
+  display: inline-block;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #3c6dd8;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.common-button:hover {
+  background: #222325;
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 25px 15px;
+  }
+
+  .page-hero {
+    padding: 40px 20px;
+  }
+
+  .page-hero h1 {
+    font-size: 28px;
+  }
+
+  .page-hero p {
+    font-size: 14px;
+  }
+
+  .page-section {
+    padding: 22px;
+    margin: 20px auto;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.home-hero {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-hero h1 {
+  font-size: 40px;
+}
+
+.home-hero p {
+  margin-bottom: 12px;
+}
+
+.home-action {
+  text-align: center;
+}
+
+.home-action .common-button {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    min-height: 300px;
+  }
+
+  .home-hero h1 {
+    font-size: 28px;
+  }
+}

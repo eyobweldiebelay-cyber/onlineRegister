@@ -1,0 +1,37 @@
+.dashboard-navbar{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: #306bbe;
+
+}
+.aside {
+  width: 220px;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  flex-direction: column;
+}
+
+.aside a{
+    display: flex;
+    text-decoration: none;
+  padding: 10px;
+  flex-direction: column;
+  
+}
+.student{
+  display: flex;
+}
+.register{
+  display: flex;
+}
+.dean{
+  display: flex;
+}
+.main {
+    flex: 1;
+    padding: 30px;
+}
+

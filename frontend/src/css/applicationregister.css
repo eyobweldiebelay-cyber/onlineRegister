@@ -1,0 +1,882 @@
+
+/* =========================================================
+   APPLICATION PAGE
+========================================================= */
+
+.application-page {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    margin: 0 0 6px 0;
+
+    color: #1f2937;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.page-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   APPLICATION COUNT
+========================================================= */
+
+.application-count {
+    min-width: 150px;
+
+    padding: 15px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.application-count span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.application-count strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.table-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.table-header {
+    padding: 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-header h3 {
+    margin: 0 0 5px 0;
+
+    color: #1f2937;
+
+    font-size: 18px;
+}
+
+.table-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   APPLICATION TABLE
+========================================================= */
+
+.application-table {
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+.application-table th {
+    padding: 14px 16px;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #374151;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.application-table td {
+    padding: 15px 16px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #4b5563;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+.application-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.application-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.application-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.student-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.student-avatar {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 50%;
+
+    background: #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #374151;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.student-name strong {
+    display: block;
+
+    color: #1f2937;
+
+    font-size: 14px;
+}
+
+.student-name small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* APPROVED */
+
+.status-approved {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* REJECTED */
+
+.status-rejected {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+/* PENDING */
+
+.status-pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+/* DRAFT */
+
+.status-draft {
+    background: #e5e7eb;
+
+    color: #374151;
+}
+
+
+/* OTHER */
+
+.status-default {
+    background: #e0e7ff;
+
+    color: #3730a3;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+========================================================= */
+
+.btn {
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 9px 15px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.btn-view {
+    background: #e0e7ff;
+
+    color: #3730a3;
+}
+
+.btn-view:hover {
+    background: #c7d2fe;
+}
+
+
+/* =========================================================
+   DOCUMENT BUTTON
+========================================================= */
+
+.btn-document {
+    background: #f3f4f6;
+
+    color: #374151;
+}
+
+.btn-document:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================================================
+   APPROVE BUTTON
+========================================================= */
+
+.btn-approve {
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+.btn-approve:hover {
+    background: #15803d;
+}
+
+
+/* =========================================================
+   REJECT BUTTON
+========================================================= */
+
+.btn-reject {
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+.btn-reject:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.btn-close {
+    background: #6b7280;
+
+    color: #ffffff;
+}
+
+.btn-close:hover {
+    background: #4b5563;
+}
+
+
+/* =========================================================
+   EMPTY TABLE
+========================================================= */
+
+.empty-table {
+    padding: 40px !important;
+
+    color: #9ca3af !important;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-box {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #6b7280;
+}
+
+.loading-spinner {
+    width: 35px;
+    height: 35px;
+
+    margin-bottom: 12px;
+
+    border: 4px solid #e5e7eb;
+
+    border-top: 4px solid #4f46e5;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   APPLICATION MODAL
+========================================================= */
+
+.application-modal {
+    width: 100%;
+
+    max-width: 950px;
+
+    max-height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+    padding: 20px 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.modal-header h2 {
+    margin: 0 0 5px 0;
+
+    color: #1f2937;
+
+    font-size: 21px;
+}
+
+.modal-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+========================================================= */
+
+.modal-close {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.modal-body {
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.detail-section {
+    margin-bottom: 28px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    margin-bottom: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-title h3 {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.detail-item {
+    padding: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef2f7;
+
+    border-radius: 8px;
+}
+
+.detail-item span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.detail-item strong {
+    display: block;
+
+    color: #1f2937;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DOCUMENT TABLE
+========================================================= */
+
+.document-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.document-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.document-table th {
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    text-align: left;
+}
+
+.document-table td {
+    padding: 13px 12px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #4b5563;
+
+    font-size: 13px;
+}
+
+.document-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   NO DOCUMENTS
+========================================================= */
+
+.no-documents {
+    padding: 20px;
+
+    border: 1px dashed #d1d5db;
+
+    border-radius: 8px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.modal-footer {
+    padding: 18px 25px;
+
+    border-top: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   DECISION BUTTONS
+========================================================= */
+
+.decision-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .detail-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .application-page {
+        padding: 15px;
+    }
+
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .application-count {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+
+    .application-modal {
+        max-height: 95vh;
+    }
+
+
+    .modal-header {
+        padding: 15px;
+    }
+
+
+    .modal-body {
+        padding: 15px;
+    }
+
+
+    .modal-footer {
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .decision-buttons {
+        width: 100%;
+    }
+
+
+    .decision-buttons .btn {
+        flex: 1;
+    }
+
+
+    .modal-footer > .btn {
+        width: 100%;
+    }
+
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+

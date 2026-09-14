@@ -1,0 +1,92 @@
+.all-continer {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+}
+
+.all-continer > h3 {
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+.form {
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+  outline: none;
+}
+
+.select:focus {
+  border-color: #2563eb;
+}
+
+.form h3 {
+  margin: 8px 0 10px;
+  color: #334155;
+  font-size: 15px;
+}
+
+.status-value {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 7px 15px;
+  border-radius: 20px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+}
+
+.status-value.pending {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
+.message {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+@media (max-width: 600px) {
+  .all-continer {
+    padding: 15px;
+  }
+
+  .form {
+    padding: 18px;
+  }
+}

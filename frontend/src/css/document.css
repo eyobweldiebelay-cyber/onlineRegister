@@ -1,0 +1,115 @@
+.all-continer {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px;
+}
+
+/* Title */
+
+.all-continer > .strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.p {
+  color: #64748b;
+}
+
+/* Progress */
+
+.content {
+  margin: 25px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.progress-style {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-style div {
+  height: 100%;
+  background: #2563eb;
+  transition: width .3s;
+}
+
+.span-correct,
+.span-false {
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.span-correct {
+  color: #16a34a;
+}
+
+.span-false {
+  color: #64748b;
+}
+
+/* Upload sections */
+
+.all-continer > div:not(.content) {
+  margin-bottom: 18px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+}
+
+.strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+/* Button */
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
+.button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .all-continer {
+    padding: 15px;
+  }
+}

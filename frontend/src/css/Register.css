@@ -1,0 +1,76 @@
+/* Container centered on the screen */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Card container for the form */
+.form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Form input fields */
+.form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #007bff;
+}
+
+/* Validation error messages */
+.form p[style*="color: red"] {
+  font-size: 0.85rem;
+  margin: 5px 0 10px 0;
+}
+
+/* Submit button */
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Link area at the bottom */
+.form p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555555;
+}
+
+.form p a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form p a:hover {
+  text-decoration: underline;
+}
