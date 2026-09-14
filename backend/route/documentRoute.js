@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router();
 
 const upload = require("../middleware/uploadMiddleware");
+
 const controller = require("../controller/documentController");
+
 const auth = require("../middleware/authMiddleware");
 
 router.post(
