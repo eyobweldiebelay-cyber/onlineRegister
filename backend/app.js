@@ -1,51 +1,61 @@
+const express = require('express');
+const path = require('path');
+const db = require('./db/dbConfig');
+const cors = require('cors');
 
-const express=require('express')
-const path = require("path");
-const db=require('./db/dbConfig')
-const cors=require('cors')
-const app=express();
+const app = express();
+
 app.use(express.json());
+
 app.use(cors());
+
 app.use(
   "/uploads/documents",
   express.static(path.join(__dirname, "uploads/documents"))
 );
-//authRoute
-const authRoute=require('./route/authRoute');
- app.use("/api",authRoute);
- //login route
- const loginRoute=require('./route/authRoute')
- app.use("/api",loginRoute)
- //application Route
- const applicationRoute=require('./route/applicationRoute')
- app.use("/api",applicationRoute);
- //program Route
- const programRoute=require('./route/programRoute')
- app.use("/api",programRoute)
- //document Route
-const documentRoute = require("./route/documentRoute");
 
+// Auth Route
+const authRoute = require('./route/authRoute');
+app.use("/api", authRoute);
+
+// Application Route
+const applicationRoute = require('./route/applicationRoute');
+app.use("/api", applicationRoute);
+
+// Program Route
+const programRoute = require('./route/programRoute');
+app.use("/api", programRoute);
+
+// Document Route
+const documentRoute = require("./route/documentRoute");
 app.use("/api/documents", documentRoute);
- //paymeny
+
+// Payment Route
 const paymentRoute = require("./route/paymentRoute");
 app.use("/api/payments", paymentRoute);
-//comment
-const commentRoute =require("./route/commentRoute");
 
-app.use("/api",commentRoute);
-const studentRoute=require('./route/studentRoute')
- app.use("/api",studentRoute);
- //student dashboard route
- const dashboardRoute=require('./route/dashboardRoute')
- app.use("/api",dashboardRoute);
- //registrar dashboard route
- const registerDshRoute=require('./route/registerDshRoute')
- app.use('/api',registerDshRoute);
- //report route
- const reportRoute = require('./route/reportRoute');
- app.use('/api/reports', reportRoute);
- //dean dashboard route
- const deanRoute = require('./route/deanRoute');
- app.use('/api/dean', deanRoute);
+// Comment Route
+const commentRoute = require("./route/commentRoute");
+app.use("/api", commentRoute);
 
-module.exports=app;
+// Student Route
+const studentRoute = require('./route/studentRoute');
+app.use("/api", studentRoute);
+
+// Student Dashboard Route
+const dashboardRoute = require('./route/dashboardRoute');
+app.use("/api", dashboardRoute);
+
+// Registrar Dashboard Route
+const registerDshRoute = require('./route/registerDshRoute');
+app.use('/api', registerDshRoute);
+
+// Report Route
+const reportRoute = require('./route/reportRoute');
+app.use('/api/reports', reportRoute);
+
+// Dean Dashboard Route
+const deanRoute = require('./route/deanRoute');
+app.use('/api/dean', deanRoute);
+
+module.exports = app;
