@@ -79,6 +79,8 @@ function Login() {
       // =========================
       // ROLE BASED NAVIGATION
       // =========================
+    //  console.log("USER:", user);
+//console.log("ROLE:", user.role);
 
       if (user.role === "student") {
 
