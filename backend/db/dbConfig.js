@@ -6,11 +6,11 @@ const online = {
   password: process.env.PASS,
   database: process.env.DB_NAME,
   port: Number(process.env.DB_PORT),
-/*
+
   ssl: {
     rejectUnauthorized: false
   }
-    */
+    
 };
 
 const db = mysql.createPool(online);
