@@ -1,25 +1,21 @@
-import React, { useState } from 'react'
-import '../../css/Login.css'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../../css/Login.css';
 import api from '../../api';
 
 function Login() {
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Validation error
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Server message
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
-
-    e.preventDefault()
+    e.preventDefault();
 
     let isValid = true;
 
@@ -41,7 +37,7 @@ function Login() {
       setPasswordError('');
     }
 
-    // STOP if frontend validation fails
+    // Stop if validation fails
     if (!isValid) {
       console.log('Form submission failed');
       return;
@@ -49,73 +45,58 @@ function Login() {
 
     console.log('Form validation successful');
 
-    // Send data to backend
     try {
-
+      // Send login request
       const response = await api.post('/login', {
         email: email,
         password: password
       });
 
-      console.log("Backend output:", response.data);
+      console.log('Backend output:', response.data);
 
-
-      // Get user from backend
+      // Get user and token
       const user = response.data.data.user;
+      const token = response.data.data.token;
 
+      console.log('USER:', user);
+      console.log('ROLE:', user.role);
 
       // Save token
-      localStorage.setItem('token',response.data.data.token);
-    
-
+      localStorage.setItem('token', token);
 
       // Save user
-      localStorage.setItem('user',JSON.stringify(user));
-
+      localStorage.setItem('user', JSON.stringify(user));
 
       setMessage('User Login successfully');
 
-
-      // =========================
-      // ROLE BASED NAVIGATION
-      // =========================
-    //  console.log("USER:", user);
-//console.log("ROLE:", user.role);
-
-      if (user.role === "student") {
-
-        navigate("/student/dashboard");
-
-      }
-
-      else if (user.role === "registrar") {
-
-        navigate("/registrar/dashboard");
-
-      }
-
-      else if (user.role === "dean") {
-
-        navigate("/dean/dashboard");
-
+      // Role-based navigation
+      if (user.role === 'student') {
+        navigate('/student/dashboard');
+      } else if (user.role === 'registrar') {
+        navigate('/registrar/dashboard');
+      } else if (user.role === 'dean') {
+        navigate('/dean/dashboard');
+      } else {
+        console.log('Unknown role:', user.role);
+        setMessage('Unknown user role');
       }
 
     } catch (err) {
+      console.log('Login error:', err.response?.data);
 
-      console.log(err.response?.data);
-
+      setMessage(
+        err.response?.data?.msg ||
+        err.response?.data?.message ||
+        'Login failed'
+      );
     }
-
   };
 
-
   return (
-
-    <div className='page'>
-
+    <div className="page">
       <h1>{message}</h1>
 
-      <form onSubmit={handleSubmit} className='form'>
+      <form onSubmit={handleSubmit} className="form">
 
         <input
           type="email"
@@ -123,9 +104,6 @@ function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
-        <br />
-        <br />
 
         {emailError && (
           <p style={{ color: 'red' }}>
@@ -140,30 +118,26 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <br />
-        <br />
-
         {passwordError && (
           <p style={{ color: 'red' }}>
             {passwordError}
           </p>
         )}
 
-        <button type="submit" className='button'>
+        <button type="submit" className="button">
           Login
         </button>
 
         <p>
-          Not Account before create ?
-          <Link to={"/register"}>Create Account</Link>
+          Don't have an account?{' '}
+          <Link to="/register">
+            Create Account
+          </Link>
         </p>
 
       </form>
-
     </div>
-
   );
-
 }
 
 export default Login;
