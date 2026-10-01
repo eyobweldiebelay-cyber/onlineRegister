@@ -38,7 +38,7 @@ function User() {
     }
 
     // Email validation
-    if (!email) {
+    if(!email) {
       setEmailError('Email is required');
       isValid = false;
     } else {
