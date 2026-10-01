@@ -1,7 +1,7 @@
 
 .dashboard-footer {
   margin-top: auto;
-  background: #ffffff;
+  background: lab(4.31% 1.81 -1.7);
   border-top: 1px solid #e5e7eb;
   padding: 18px 30px;
 }
@@ -18,20 +18,20 @@
 .dashboard-footer strong {
   display: block;
   color: #1d4ed8;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .dashboard-footer span {
   display: block;
   margin-top: 4px;
-  color: #6b7280;
-  font-size: 12px;
+  color:white;
+  font-size: 16px;
 }
 
 .dashboard-footer p {
   margin: 0;
-  color: #6b7280;
-  font-size: 12px;
+  color: white;
+  font-size: 16px;
 }
 
 @media (max-width: 600px) {
