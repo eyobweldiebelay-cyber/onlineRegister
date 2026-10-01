@@ -31,7 +31,7 @@ function Navbar() {
         </Link>
 
         <Link to="/register">
-          Register
+          Create Account
         </Link>
 
       </div>

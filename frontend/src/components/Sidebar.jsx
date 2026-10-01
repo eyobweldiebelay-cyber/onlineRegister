@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import "../css/Navbar.css";
-import "../css/responsive/responsive.css";
+
 
 function Sidebar() {
   const { user } = useContext(AuthContext);

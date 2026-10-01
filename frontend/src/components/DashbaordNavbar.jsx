@@ -1,6 +1,8 @@
+
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../css/DashboardNavbar.css";
 
 function DashboardNavbar() {
   const { user } = useContext(AuthContext);
@@ -15,10 +17,22 @@ function DashboardNavbar() {
   return (
     <nav className="dashboard-navbar">
 
-      <h2 className="logo">
-        Online Student Register System
-      </h2>
+      {/* System Logo */}
+      <div className="dashboard-brand">
 
+        <div className="system-logo">
+          OS
+        </div>
+
+        <div className="system-name">
+          <strong>Online Student</strong>
+          <span>Register System</span>
+        </div>
+
+      </div>
+
+
+      {/* User Profile */}
       <div className="dashboard-user">
 
         <div className="user-image">
@@ -33,9 +47,19 @@ function DashboardNavbar() {
           )}
         </div>
 
-        <strong>
-          {user?.firstname || user?.username}
-        </strong>
+        <div className="user-info">
+
+          <strong>
+            {user?.firstname || user?.username || "User"}
+          </strong>
+
+          <span>
+            {user?.role
+              ? user.role.charAt(0).toUpperCase() + user.role.slice(1)
+              : "Student"}
+          </span>
+
+        </div>
 
         <button
           onClick={handleLogout}
@@ -51,3 +75,4 @@ function DashboardNavbar() {
 }
 
 export default DashboardNavbar;
+

@@ -1,37 +1,224 @@
-.dashboard-navbar{
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background: #306bbe;
+/* =========================================================
+   DASHBOARD MAIN LAYOUT
+   Used by Student, Registrar and Dean layouts
+   ========================================================= */
 
+.all-aside-main {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  align-items: stretch;
 }
+
+/* =========================================================
+   LEFT SIDEBAR CONTAINER
+   ========================================================= */
+
 .aside {
-  width: 220px;
-  padding: 20px;
-  border-right: 1px solid #ccc;
-  flex-direction: column;
+  flex: 0 0 265px;
+  width: 265px;
+  min-width: 265px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.aside a{
-    display: flex;
-    text-decoration: none;
-  padding: 10px;
-  flex-direction: column;
-  
+/* Make the actual sidebar fill .aside */
+.aside .aside-bar {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  box-sizing: border-box;
 }
-.student{
-  display: flex;
-}
-.register{
-  display: flex;
-}
-.dean{
-  display: flex;
-}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
 .main {
-    flex: 1;
-    padding: 30px;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/* Prevent large elements from breaking the layout */
+.main img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main table {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   EXISTING CLASSES
+   ========================================================= */
+
+.student {
+  display: flex;
+}
+
+.register {
+  display: flex;
+}
+
+.dean {
+  display: flex;
+}
+
+
+/* =========================================================
+   TABLET
+   601px - 1024px
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .all-aside-main {
+    min-height: calc(100vh - 64px);
+  }
+
+  /* Smaller vertical sidebar */
+  .aside {
+    flex: 0 0 190px;
+    width: 190px;
+    min-width: 190px;
+  }
+
+  .aside .aside-bar {
+    width: 100%;
+    min-height: calc(100vh - 64px);
+    padding: 18px 10px;
+  }
+
+  /* Smaller sidebar links */
+  .navlink {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navlink a {
+    padding: 10px 9px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Main content */
+  .main {
+    padding: 20px 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   400px - 600px
+   ========================================================= */
+
+@media (min-width: 400px) and (max-width: 600px) {
+
+  .all-aside-main {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+  }
+
+  /* Keep sidebar vertical on LEFT */
+  .aside {
+    flex: 0 0 155px;
+    width: 155px;
+    min-width: 155px;
+  }
+
+  .aside .aside-bar {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 12px 7px;
+    box-sizing: border-box;
+  }
+
+  .navlink {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .navlink a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 7px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Main content */
+  .main {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 10px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   399px and below
+   ========================================================= */
+
+@media (max-width: 399px) {
+
+  .all-aside-main {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+  }
+
+  /* Smaller but still vertical sidebar */
+  .aside {
+    flex: 0 0 135px;
+    width: 135px;
+    min-width: 135px;
+  }
+
+  .aside .aside-bar {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 10px 5px;
+    box-sizing: border-box;
+  }
+
+  .navlink {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3px;
+  }
+
+  .navlink a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Main content */
+  .main {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 8px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+}

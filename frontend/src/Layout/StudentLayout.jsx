@@ -3,7 +3,7 @@ import DashboardNavbar from "../components/DashbaordNavbar";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 import "../css/student.css";
-import "../css/responsive/responsive.css";
+
 
 function StudentLayout() {
   return (

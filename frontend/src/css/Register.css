@@ -1,76 +1,198 @@
+
 /* Container centered on the screen */
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+
   background-color: #f4f6f8;
+
   font-family: system-ui, -apple-system, sans-serif;
 }
+
 
 /* Card container for the form */
 .form {
   background: #ffffff;
+
   padding: 30px;
+
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  box-shadow: 0px 14px 25px rgba(28, 26, 26, 0.15);
+
   width: 100%;
   max-width: 400px;
+
   box-sizing: border-box;
 }
+
 
 /* Form input fields */
 .form input {
   width: 100%;
+
   padding: 12px;
+
   border: 1px solid #cccccc;
+
   border-radius: 6px;
+
   font-size: 0.95rem;
+
   box-sizing: border-box;
+
   outline: none;
 }
+
 
 .form input:focus {
   border-color: #007bff;
 }
 
+
+/* =========================================
+   PASSWORD CONTAINER
+========================================= */
+
+.password-container {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* Password input */
+.password-container input {
+  width: 100%;
+
+  padding-right: 50px;
+}
+
+
+/* Password show/hide button */
+.password-toggle {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+
+/* Eye icon hover */
+.password-toggle:hover {
+  color: #007bff;
+}
+
+
 /* Validation error messages */
 .form p[style*="color: red"] {
   font-size: 0.85rem;
+
   margin: 5px 0 10px 0;
 }
+
 
 /* Submit button */
 .button {
   width: 100%;
+
   padding: 12px;
+
   background-color: #007bff;
+
   color: #ffffff;
+
   border: none;
+
   border-radius: 6px;
+
   font-size: 1rem;
+
   font-weight: 600;
+
   cursor: pointer;
 }
+
 
 .button:hover {
   background-color: #0056b3;
 }
 
+
 /* Link area at the bottom */
 .form p {
   margin-top: 15px;
+
   font-size: 0.9rem;
+
   text-align: center;
+
   color: #555555;
 }
 
+
 .form p a {
   color: #007bff;
+
   text-decoration: none;
+
   font-weight: 600;
 }
 
+
 .form p a:hover {
   text-decoration: underline;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .page {
+    padding: 15px;
+
+    box-sizing: border-box;
+  }
+
+  .form {
+    padding: 22px;
+
+    max-width: 100%;
+  }
+
+  .form input {
+    padding: 11px;
+  }
+
+  .password-container input {
+    padding-right: 48px;
+  }
+
+  .button {
+    padding: 11px;
+  }
 }

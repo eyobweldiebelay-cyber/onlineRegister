@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import api from '../../api';
 import '../../css/Register.css';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,7 @@ function User() {
 
   // Show password
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // Validation errors
   const [userErr, setUserError] = useState('');
@@ -38,7 +40,7 @@ function User() {
     }
 
     // Email validation
-    if(!email) {
+    if (!email) {
       setEmailError('Email is required');
       isValid = false;
     } else {
@@ -66,8 +68,6 @@ function User() {
       setConfirmPasswordError('');
     }
 
-    
-
     // STOP if frontend validation fails
     if (!isValid) {
       console.log('Form submission failed');
@@ -81,7 +81,6 @@ function User() {
       const res = await api.post('/user', {
         username: username,
         email: email,
-     
         password: password
       });
 
@@ -93,7 +92,6 @@ function User() {
       alert('User created successfully');
 
     } catch (err) {
-
       console.log(err.response?.data);
 
       // Email already exists
@@ -108,11 +106,11 @@ function User() {
   };
 
   return (
-    <div className='page'>
+    <div className="page">
 
       <h1>{message}</h1>
 
-      <form onSubmit={handleSubmit} className='form'>
+      <form onSubmit={handleSubmit} className="form">
 
         {/* Username */}
         <input
@@ -123,7 +121,7 @@ function User() {
         />
 
         <br />
-        <br />
+        
 
         {userErr && (
           <p style={{ color: 'red' }}>
@@ -140,7 +138,7 @@ function User() {
         />
 
         <br />
-        <br />
+        
 
         {emailError && (
           <p style={{ color: 'red' }}>
@@ -148,10 +146,9 @@ function User() {
           </p>
         )}
 
-      
-
         {/* Password */}
-        <div>
+        <div className="password-container">
+
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -159,14 +156,18 @@ function User() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <label>
-            <input
-              type="checkbox"
-              checked={showPassword}
-              onChange={(e) => setShowPassword(e.target.checked)}
-            />
-            Show password
-          </label>
+          <button
+            type="button"
+            className="password-toggle"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? (
+              <EyeOff size={20} />
+            ) : (
+              <Eye size={20} />
+            )}
+          </button>
+
         </div>
 
         <br />
@@ -178,12 +179,30 @@ function User() {
         )}
 
         {/* Confirm Password */}
-        <input
-          type={showPassword ? "text" : "password"}
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+        <div className="password-container">
+
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+
+          <button
+            type="button"
+            className="password-toggle"
+            onClick={() =>
+              setShowConfirmPassword(!showConfirmPassword)
+            }
+          >
+            {showConfirmPassword ? (
+              <EyeOff size={20} />
+            ) : (
+              <Eye size={20} />
+            )}
+          </button>
+
+        </div>
 
         <br />
         <br />
@@ -194,7 +213,8 @@ function User() {
           </p>
         )}
 
-        <button type="submit" className='button'>
+        {/* Sign Up */}
+        <button type="submit" className="button">
           Sign Up
         </button>
 

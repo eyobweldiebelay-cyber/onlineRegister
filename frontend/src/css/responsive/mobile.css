@@ -1,0 +1,160 @@
+/* ================================
+   MOBILE
+   600px and below
+================================ */
+
+@media (max-width: 600px) {
+
+  /* ---------- Dashboard Navbar ---------- */
+
+  .dashboard-navbar {
+    min-height: 60px;
+    height: auto;
+    padding: 10px 12px;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .dashboard-navbar .logo {
+    font-size: 14px;
+    line-height: 1.25;
+    max-width: 55%;
+  }
+
+  .dashboard-user {
+    gap: 6px;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .dashboard-user strong {
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    margin-right: 2px;
+  }
+
+  .user-image {
+    width: 34px;
+    height: 34px;
+  }
+
+  .button-logout {
+    padding: 6px 9px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+
+  /* ---------- Main Layout ---------- */
+
+  .all-aside-main {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .aside {
+    width: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+
+  /* ---------- Mobile Navigation ---------- */
+
+  .aside-bar {
+    width: 100%;
+    min-height: auto;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background: linear-gradient(90deg, #16171a, #0c0e10);
+  }
+
+  .navlink {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: max-content;
+  }
+
+  .navlink a {
+    padding: 8px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+
+  /* ---------- Main Content ---------- */
+
+  .main {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 16px 12px;
+    overflow-x: hidden;
+  }
+
+  .main img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .main table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+/* ================================
+   VERY SMALL PHONES
+   400px and below
+================================ */
+
+@media (max-width: 400px) {
+
+  .dashboard-navbar {
+    padding: 8px 9px;
+  }
+
+  .dashboard-navbar .logo {
+    font-size: 12px;
+    max-width: 50%;
+  }
+
+  .dashboard-user strong {
+    display: none;
+  }
+
+  .user-image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .button-logout {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .aside-bar {
+    padding: 7px 8px;
+  }
+
+  .navlink a {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .main {
+    padding: 14px 10px;
+  }
+}
